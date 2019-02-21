@@ -18,7 +18,7 @@ client.on("message", message => {
         let items = args[2];
         let paiement = args[3];
         
-        if (!quantity,!items,!paiement) return message.channel.send("**:gear: Veuillez respectez l'écriture, [quantité] [Type_D'objet] [Moyen de paiement].**")
+        if (!quantity,!items,!paiement) return message.channel.send("**:gear: Veuillez respectez l'écriture, [quantité] [Type_D'objet] [Moyen de paiement].**")return
         if (quantity,items,paiement) return message.channel.send(`**:gear: Bonjour ${message.author.username}, Vous souhaitez commander ${quantity} de ${items} et payer en ${paiement}. Est-ce correcte ?**`)
         .then(message => {
             message.react('✅')
@@ -53,7 +53,7 @@ client.on("message", message => {
                           
                           if (reaction.emoji.name === '🛑' && user.id !== client.user.id) {
                               client.users.get(dm).send("**:gear: Malheureusement votre commande a été refusé. Pour avoir avantage d'explication nous vous invitons à nous contacter sur notre discord.**")
-                              message.channel.bulkDelete(parseInt(0) + 1)
+                              message.channel.bulkDelete(parseInt(0) + 1)return
                           }
                           
 
