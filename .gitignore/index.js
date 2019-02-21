@@ -65,7 +65,7 @@ client.on("message", message => {
 
 
                 if (reaction.emoji.name === '❌' && user.id !== client.user.id) {
-                    message.channel.bulkDelete(parseInt(1) + 1)
+                    message.channel.bulkDelete(parseInt(0) + 1)
                 }
               })
             })
