@@ -18,7 +18,7 @@ client.on("message", message => {
         let items = args[2];
         let paiement = args[3];
         
-        if (!quantity,!items,!paiement) return message.channel.send("Veuillez respectez l'écriture, [quantité] [Type_D'objet] [Moyen de paiement].")
+        if (!quantity,!items,!paiement) return message.channel.send("**:gear: Veuillez respectez l'écriture, [quantité] [Type_D'objet] [Moyen de paiement].**")
         if (quantity,items,paiement) return message.channel.send(`**:gear: Bonjour ${message.author.username}, Vous souhaitez commander ${quantity} de ${items} et payer en ${paiement}. Est-ce correcte ?**`)
         .then(message => {
             message.react('✅')
@@ -29,8 +29,9 @@ client.on("message", message => {
                 if (reaction.emoji.name === '✅' && user.id !== client.user.id) {
                   let namec = user
                   let dm = user.id
+                  message.channel.bulkDelete(parseInt(0) + 2)
                   var gro = client.channels.get('525351149952565248');
-                  gro.send(`**:gear: ${namec} ta commande à été prise en compte, je te notifirai quand un membre de la faction répondra à ta demande**`)
+                  gro.send(`**:gear: ${namec} Votre commande a été prise en compte, vous serez notifié quand un membre de la faction répondra à votre demande**`)
                     var robby = client.channels.get('546354572701073419');
                     robby.send(`**:gear:@here Le joueur ${namec} souhaite commander ${quantity} ${items} et payer en ${paiement}. \n🛑Utilisez pour refuser une commande, 👋 pour signalez que vous préparez la commande et 🍾 pour signalez que vous avez terminez la commande**`)
 
@@ -42,19 +43,19 @@ client.on("message", message => {
                         client.on('messageReactionAdd', (reaction, user) => {
           
                           if (reaction.emoji.name === '🍾' && user.id !== client.user.id) {
-                            client.users.get(dm).send("**:gear: Je te préviens que ta commande est terminé. contacte un membre de la faction pour l'échange.**")
+                            client.users.get(dm).send("**:gear: Votre commande est terminé. Veuillez contacter un membre de la faction pour l'échange.**")
                             message.channel.bulkDelete(parseInt(0) + 1)
                           }
 
                           if (reaction.emoji.name === '👋' && user.id !== client.user.id) {
-                            client.users.get(dm).send("**:gear: Je te préviens que ta commande est en préparation.**")
+                            client.users.get(dm).send("**:gear: Votre commande est en préparation.**")
                           }
-          
-          
+                          
                           if (reaction.emoji.name === '🛑' && user.id !== client.user.id) {
-                              client.users.get(dm).send("**:gear: Malheureusement ta commande à été refusé. Pour avoir d'avanatge d'explication contacte-nous sur notre discord.**")
+                              client.users.get(dm).send("**:gear: Malheureusement votre commande a été refusé. Pour avoir avantage d'explication nous vous invitons à nous contacter sur notre discord.**")
                               message.channel.bulkDelete(parseInt(0) + 1)
                           }
+                          
 
                         })
 
