@@ -64,6 +64,7 @@ client.on("message", message => {
         let dm = message.author.id;
         
         if (!quantity,!items,!paiement){
+          message.channel.bulkDelete(parseInt(0) + 1)
           message.channel.send({embed: {
             color: 9830405,
             author: {
