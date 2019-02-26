@@ -33,7 +33,7 @@ client.on("message", message => {
             name: client.user.username,
             icon_url: client.user.avatarURL
           },
-          title: '**:large_orange_diamond: Informations sur le Bot :large_blue_diamond:**',
+          title: '**🔶Informations sur le Bot🔷**',
           description: '',
           fields:[{
             name: ':moneybag: ***Infomation sur les commandes***:moneybag:',
