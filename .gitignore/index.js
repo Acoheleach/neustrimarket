@@ -71,7 +71,7 @@ client.on("message", message => {
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: '**⚙Erreur sur la commande**',
+            title: '**🛠Erreur sur la commande**',
             description: '',
             fields:[{
               name: '***Veuillez respectez l\'écriture de la commande.***',
@@ -97,7 +97,7 @@ client.on("message", message => {
                       name: client.user.username,
                       icon_url: client.user.avatarURL
                     },
-                    title: '**:⚙Confirmation de la commande**',
+                    title: '**	🛠Confirmation de la commande**',
                     description: '',
                     fields:[{
                       name: `***Bonjour ${message.author.username}, votre commande de ${quantity} ${items} est prise en compte***`,
