@@ -151,7 +151,6 @@ client.on("message", message => {
                             }});
                             message.channel.bulkDelete(parseInt(0) + 1)
                           }
-}
                       message.react('❌').then(message => {
                       if (reaction.emoji.name === '❌' && user.id !== client.user.id) {
                             client.users.get(dm).send({embed: {
@@ -192,13 +191,6 @@ client.on("message", message => {
                                 text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
                               }
                             }});}
-                      // on attend l'event d'ajout d'une réaction
-                      client.on('messageReactionAdd', (reaction, user) => {
-                       
-                          }
-                          
-                        
-                          
                           
 
                         })
