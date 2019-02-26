@@ -129,7 +129,7 @@ client.on("message", message => {
                         text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
                       }
                     }})
-                      message.react('✔').then(message => {
+                      message.react('✔') 
                       if (reaction.emoji.name === '✔' && user.id !== client.user.id) {
                             client.users.get(dm).send({embed: {
                               color: 1547008,
@@ -150,8 +150,8 @@ client.on("message", message => {
                               }
                             }});
                             message.channel.bulkDelete(parseInt(0) + 1)
-                          }
-                      message.react('❌').then(message => {
+
+                      message.react('❌')
                       if (reaction.emoji.name === '❌' && user.id !== client.user.id) {
                             client.users.get(dm).send({embed: {
                               color: 9830405,
@@ -171,8 +171,9 @@ client.on("message", message => {
                                 text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
                               }
                             }});
-                            message.channel.bulkDelete(parseInt(0) + 1)}
-                      message.react('🕑').then(message => {if (reaction.emoji.name === '🕑' && user.id !== client.user.id) {
+                            message.channel.bulkDelete(parseInt(0) + 1)
+                      message.react('🕑')
+                        if (reaction.emoji.name === '🕑' && user.id !== client.user.id) {
                             client.users.get(dm).send({embed: {
                               color: 23983,
                               author: {
@@ -190,7 +191,7 @@ client.on("message", message => {
                                 icon_url: client.user.avatarURL,
                                 text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
                               }
-                            }});}
+                            }});
                           
 
                         })
