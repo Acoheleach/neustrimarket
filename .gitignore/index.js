@@ -129,13 +129,8 @@ client.on("message", message => {
                         text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
                       }
                     }})
-                    .then(message => {
-                      message.react('✔')
-                      message.react('❌')
-                      message.react('🕑')
-                      // on attend l'event d'ajout d'une réaction
-                      client.on('messageReactionAdd', (reaction, user) => {
-                        if (reaction.emoji.name === '✔' && user.id !== client.user.id) {
+                      message.react('✔').then(message => {
+                      if (reaction.emoji.name === '✔' && user.id !== client.user.id) {
                             client.users.get(dm).send({embed: {
                               color: 1547008,
                               author: {
@@ -156,29 +151,9 @@ client.on("message", message => {
                             }});
                             message.channel.bulkDelete(parseInt(0) + 1)
                           }
-
-                        if (reaction.emoji.name === '🕑' && user.id !== client.user.id) {
-                            client.users.get(dm).send({embed: {
-                              color: 23983,
-                              author: {
-                                name: client.user.username,
-                                icon_url: client.user.avatarURL
-                              },
-                              title: '**Commande en cours.**',
-                              description: '',
-                              fields:[{
-                                name: `***Bonjour ${namec}, j'ai le plaisir de vous annoncez que votre commande de ${quantity} ${items} est en cours de préparation.***`,
-                                value: 'Je vous recontacterai pour vous avertir lorsque votre commande sera terminé'
-                              }],
-                              timestamp: new Date(),
-                              footer: {
-                                icon_url: client.user.avatarURL,
-                                text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
-                              }
-                            }});
-                          }
-                          
-                        if (reaction.emoji.name === '❌' && user.id !== client.user.id) {
+}
+                      message.react('❌').then(message => {
+                      if (reaction.emoji.name === '❌' && user.id !== client.user.id) {
                             client.users.get(dm).send({embed: {
                               color: 9830405,
                               author: {
@@ -197,8 +172,33 @@ client.on("message", message => {
                                 text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
                               }
                             }});
-                            message.channel.bulkDelete(parseInt(0) + 1)
+                            message.channel.bulkDelete(parseInt(0) + 1)}
+                      message.react('🕑').then(message => {if (reaction.emoji.name === '🕑' && user.id !== client.user.id) {
+                            client.users.get(dm).send({embed: {
+                              color: 23983,
+                              author: {
+                                name: client.user.username,
+                                icon_url: client.user.avatarURL
+                              },
+                              title: '**Commande en cours.**',
+                              description: '',
+                              fields:[{
+                                name: `***Bonjour ${namec}, j'ai le plaisir de vous annoncez que votre commande de ${quantity} ${items} est en cours de préparation.***`,
+                                value: 'Je vous recontacterai pour vous avertir lorsque votre commande sera terminé'
+                              }],
+                              timestamp: new Date(),
+                              footer: {
+                                icon_url: client.user.avatarURL,
+                                text: 'Par ⚡NeustriaBot⚡ || By Crisppy 💚',
+                              }
+                            }});}
+                      // on attend l'event d'ajout d'une réaction
+                      client.on('messageReactionAdd', (reaction, user) => {
+                       
                           }
+                          
+                        
+                          
                           
 
                         })
