@@ -33,7 +33,7 @@ client.on("message", message => {
             name: client.user.username,
             icon_url: client.user.avatarURL
           },
-          title: '**🔶Informations sur le Bot🔷**',
+          title: '🔶Informations sur le Bot🔷',
           description: '',
           fields:[{
             name: ':moneybag: ***Infomation sur les commandes***:moneybag:',
@@ -71,7 +71,7 @@ client.on("message", message => {
               name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            title: '**🛠Erreur sur la commande**',
+            title: '🛠Erreur sur la commande',
             description: '',
             fields:[{
               name: '***Veuillez respectez l\'écriture de la commande.***',
